@@ -5,8 +5,9 @@ import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.examples.constants.LoginConstants;
 import com.crowdar.examples.services.LoginService;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 
 /**
  * This class handles the steps in the features files and connects with the service in case of having business logic.
@@ -15,19 +16,48 @@ import cucumber.api.java.en.When;
 public class LoginSteps extends PageSteps {
 
     @Given("The app is loaded correctly")
-    @Then("Login page is displayed")
     public void isLoginPageVisible() {
         LoginService.isViewLoaded();
     }
 
-    @When("The user goes to the Sign Up page")
-    public void goToSignUp() {
-        MobileActionManager.click(LoginConstants.SIGN_UP_BUTTON_LOCATOR);
+    @When("The user enters the email (.*)")
+    public void entersEmail(String email) {
+        LoginService.doLoginEmail(email);
+    }
+    @And("Enters the password (.*)")
+    public void enterPassword(String password) {
+        LoginService.doLoginPassword(password);
     }
 
-    @When("The user logs in the application with: (.*), (.*)")
-    public void doLoginProcess(String email, String password) {
-        LoginService.doLogin(email, password);
+    @And("Clicks on Log In Button")
+    public void clicksOnLogInButton() {
+        LoginService.clickLogIn();
     }
 
+    @And("Clicks on the Menu button")
+    public void clicksOnTheMenuButton() {
+        LoginService.clickMenuButton();
+    }
+
+    @And("Clicks on the Log Out button")
+    public void clicksOnTheLogOutButton() {
+        LoginService.clickLogOutButton();
+    }
+
+    @And("Clicks Confirm on the confirmation pop up")
+    public void clicksConfirmOnTheConfirmationPopUp() {
+        LoginService.clickConfirmButton();
+    }
+
+    @Then("The user is in the Log in page")
+    public void theUserIsInTheLogInPage() {
+        LoginService.confirmLogOut();
+    }
+
+    @And("The user is logued with email '(.*)' and password '(.*)'")
+    public void theUserIsLoguedWithEmailPruebaqamanualGmailComAndPasswordCrowdar(String email, String password) {
+        LoginService.doLoginEmail(email);
+        LoginService.doLoginPassword(password);
+        LoginService.clickLogIn();
+    }
 }
