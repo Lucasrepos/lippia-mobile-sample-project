@@ -3,7 +3,7 @@ Feature: Settings
 
   Background:
     Given The app is loaded correctly
-    And The user is logued with email 'pruebaqamanual@gmail.com' and password 'Crowdar2022'
+    And The user is logued with email 'Mobile-lucas@gmail.com' and password 'Lippia2023'
 
   Scenario: Activates Dark mode
     When Clicks on the Menu button

@@ -3,7 +3,7 @@ Feature: Time Entries
 
   Background:
     Given The app is loaded correctly
-    And The user is logued with email 'pruebaqamanual@gmail.com' and password 'Crowdar2022'
+    And The user is logued with email 'Mobile-lucas@gmail.com' and password 'Lippia2023'
 
 
   Scenario Outline: Successful Time Entry
@@ -15,8 +15,8 @@ Feature: Time Entries
     Then The time entry is saved
 
     Examples:
-      | hours | minutes | description        |
-      | 02    | 05      | TP Crowdar Academy |
+      | hours | minutes | description      |
+      | 03    | 07      | Description Test |
 
 
   Scenario Outline: Discard Time Entry
@@ -29,8 +29,8 @@ Feature: Time Entries
     Then Time Entries Page is displayed
 
     Examples:
-      | hours | minutes | description        |
-      | 02    | 05      | TP Crowdar Academy |
+      | hours | minutes | description      |
+      | 04    | 10       | Description Test |
 
 
   Scenario Outline: Successful Time Entry with date time
@@ -43,6 +43,6 @@ Feature: Time Entries
     Then The time entry is saved
 
     Examples:
-      | hours | minutes | startDate        | endDate          | description        |
-      | 02    | 05      | 21 November 2022 | 22 November 2022 | TP Crowdar Academy |
+      | hours | minutes | startDate       | endDate         | description       |
+      | 01    | 01      | 10 October 2022 | 22 October 2022 | TDescription Test |
 

@@ -12,8 +12,8 @@ Feature: Log In and Log Out
     Then Home page is displayed
 
     Examples:
-      | email                    | password    |
-      | pruebaqamanual@gmail.com | Crowdar2022 |
+      | email                  | password   |
+      | Mobile-lucas@gmail.com | Lippia2023 |
 
   @Logout
   Scenario Outline: Successful Log Out
@@ -26,5 +26,5 @@ Feature: Log In and Log Out
     Then The user is in the Log in page
 
     Examples:
-      | email                    | password    |
-      | pruebaqamanual@gmail.com | Crowdar2022 |
+      | email                    | password   |
+      | Mobile-lucas@gmail.com | Lippia2023 |

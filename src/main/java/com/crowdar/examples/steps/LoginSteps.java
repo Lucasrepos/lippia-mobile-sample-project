@@ -55,7 +55,7 @@ public class LoginSteps extends PageSteps {
     }
 
     @And("The user is logued with email '(.*)' and password '(.*)'")
-    public void theUserIsLoguedWithEmailPruebaqamanualGmailComAndPasswordCrowdar(String email, String password) {
+    public void theUserIsLoguedWithEmail(String email, String password) {
         LoginService.doLoginEmail(email);
         LoginService.doLoginPassword(password);
         LoginService.clickLogIn();
